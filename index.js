@@ -12,6 +12,7 @@ const port = process.env.PORT || 3000;
 io.on('connection', (socket) => {
     console.log('user connected');
     socket.on('newmessage',(x)=>{
+        io.emit("newmessage",x);
         console.log(x);
     });
     
